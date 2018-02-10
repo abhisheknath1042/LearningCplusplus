@@ -1,2 +1,3 @@
 # helloworld
-Newbie
+Just a day learning git
+I love coding
