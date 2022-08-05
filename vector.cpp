@@ -17,7 +17,10 @@ int main(){
         cout<< endl;
     }
 
-    
+    n.push_back(2);
+    int no = n.size(); //storing the size of vector 'no'
+    cout<<"Last Element:" << n[no-1] << endl;
+
     n.pop_back();
     cout<<"Contents are: ";
     for (int i = 0; i < n.size(); i++)
