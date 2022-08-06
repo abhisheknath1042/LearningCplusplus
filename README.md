@@ -1,3 +1,3 @@
 # helloworld
-Just a day learning git
+Trying to learn STL in C++
 I love coding
