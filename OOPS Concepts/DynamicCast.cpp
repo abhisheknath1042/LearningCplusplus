@@ -1,14 +1,12 @@
 // dynamic cast in C++
 
 #include <iostream>
+#include <exception>
 using namespace std;
 
 class Base
 {
 public:
-	Base();
-	~Base();
-
 	virtual void print()
 	{
 		cout << "Base" << endl;
@@ -19,9 +17,6 @@ public:
 class Derived1 : public Base
 {
 public:
-	Derived1();
-	~Derived1();
-
 	void print()
 	{
 		cout << "Derived1" << endl;
@@ -32,9 +27,6 @@ public:
 class Derived2 : public Base
 {
 public:
-	Derived2();
-	~Derived2();
-
 	void print()
 	{
 		cout << "Derived2" << endl;
@@ -48,12 +40,22 @@ int main() {
 
 	Base *bp = dynamic_cast<Base*>(&d1);
 
-	Derived2  *dp2 = dynamic_cast<Derived2*>(&bp);
+	// Derived2  *dp2 = dynamic_cast<Derived2*>(bp); // incorrect way
+
+	Derived1 *dp2 = dynamic_cast<Derived1*>(bp); //correct way 
 
 	if(dp2 == nullptr)
 		cout << "NULL" << endl;
 	else
 		cout << "NOT NULL" << endl;
+
+	try{
+		Derived1 &r1 = dynamic_cast<Derived1&>(d1);
+	}
+	catch(std::exception& e)
+	{
+		cout << e.what() <<endl;
+	}
 
 	return 0;
 }
