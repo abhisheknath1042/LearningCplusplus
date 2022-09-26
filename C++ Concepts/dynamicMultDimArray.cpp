@@ -28,9 +28,7 @@ int main() {
 
     delete[] table;
 
-    table = NULL;
-    
-	
+    table = NULL;  
 
 	return 0;
 }
